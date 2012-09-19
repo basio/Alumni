@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918141012) do
+ActiveRecord::Schema.define(:version => 20120919212500) do
+
+  create_table "alumnus", :force => true do |t|
+    t.string   "name"
+    t.string   "degree"
+    t.integer  "year"
+    t.string   "email"
+    t.string   "address"
+    t.text     "bio"
+    t.string   "resume"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @alumnu.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @alumnu.name %>
+</p>
+
+<p>
+  <b>Degree:</b>
+  <%= @alumnu.degree %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @alumnu.year %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @alumnu.email %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @alumnu.address %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @alumnu.bio %>
+</p>
+
+<p>
+  <b>Resume:</b>
+  <%= @alumnu.resume %>
+</p>
+
+
+<%= link_to 'Edit', edit_alumnu_path(@alumnu) %> |
+<%= link_to 'Back', alumnus_path %>
