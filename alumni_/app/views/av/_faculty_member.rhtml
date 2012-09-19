@@ -1,0 +1,26 @@
+<% # The following is used when the browser doesn't have javascript enabled %>
+<% classAttr = cycle("", "class=\"even\"") %>
+<% @options = params.merge(:controller => '/faculty_members', :action => "view", :id => faculty_member.send("#{FacultyMember.primary_key}")) %>
+
+<tr <%= classAttr %> >
+	<td>
+<% if (session["lang"]=="en") %>
+	<% t=  (Postion.find_by_id(faculty_member.postion_id)).ename + faculty_member.ename %>
+<%else%>	
+<% t= (Postion.find_by_id(faculty_member.postion_id)).aname + faculty_member.aname %>
+<%end%>
+
+<% if (session["lang"]=="en") %>
+<font face="Arial" size="2"><strong>
+<%= link_to t,{:action=>"wiki",:controller=>"wiki",:deptName=> "#{Department.find_by_id(faculty_member.department_id).url}",:facName=>"#{Faculty.find_by_id(faculty_member.faculty_id).url}",:pid=>"#{faculty_member.id}"}%>
+</strong> 
+</font>
+<%else%>
+<font face="Arial" size="3"><strong>
+<%= link_to t,{:action=>"wiki",:controller=>"wiki",:deptName=> "#{Department.find_by_id(faculty_member.department_id).url}",:facName=>"#{Faculty.find_by_id(faculty_member.faculty_id).url}",:pid=>"#{faculty_member.id}"}%>
+</strong></font>
+<%end%>
+</td>
+</tr>
+
+
