@@ -1,0 +1,1 @@
+rails generate scaffold alumnus id:int name:string degree:string year:int email:string address:string bio:text resume:string 
